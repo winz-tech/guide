@@ -18,14 +18,20 @@
   h1{font-size:33px;font-weight:900;margin:0;line-height:1.2}
   h1 b{color:var(--red2)}
   .lede{color:var(--mut);font-size:15.5px;margin:14px 4px 0}
-  .entries{display:flex;flex-direction:column;gap:12px;margin:26px 0 6px}
-  .slash{position:relative;display:flex;align-items:center;justify-content:space-between;text-decoration:none;color:#fff;
-    padding:18px 22px;background:linear-gradient(100deg,var(--red),#a5040e);transform:skewX(-9deg);border:1px solid #ff6b6b40;box-shadow:0 8px 24px rgba(227,6,19,.28)}
-  .slash>*{transform:skewX(9deg)}
-  .slash .t1{font-size:19px;font-weight:900}
-  .slash .t2{font-family:"Chakra Petch";font-size:11px;letter-spacing:.22em;opacity:.85;display:block;margin-top:2px}
-  .slash .go{font-size:24px}
-  .slash.dark{background:linear-gradient(100deg,#26262e,#17171c);border-color:#3a3a44;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+  .entries{display:flex;gap:12px;margin:26px 0 6px}
+  .entry{flex:1;min-width:0;position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;
+    text-decoration:none;color:#fff;padding:20px 12px 16px;border-radius:16px;
+    background:linear-gradient(160deg,#1c1c22,#141419);border:1px solid #ff3b3b55;
+    box-shadow:0 8px 22px rgba(0,0,0,.45), inset 0 0 22px rgba(227,6,19,.12)}
+  .entry::before,.entry::after{content:"";position:absolute;width:14px;height:14px;border:2px solid var(--red)}
+  .entry::before{top:8px;left:8px;border-right:0;border-bottom:0}
+  .entry::after{bottom:8px;right:8px;border-left:0;border-top:0}
+  .entry .eico{width:56px;height:56px;object-fit:contain;margin-bottom:10px;filter:drop-shadow(0 0 8px rgba(227,6,19,.4))}
+  .entry .t1{font-size:19px;font-weight:900}
+  .entry .t2{font-family:"Chakra Petch";font-size:10px;letter-spacing:.16em;color:var(--mut);margin-top:2px}
+  .entry .enter{margin-top:12px;font-size:13px;font-weight:700;color:var(--red2);
+    border:1px solid #ff3b3b66;border-radius:999px;padding:5px 14px}
+  .entry:active{transform:translateY(1px);border-color:var(--red)}
   .pick{display:flex;gap:10px;margin:24px 0 6px}
   .pick a{flex:1;text-align:center;text-decoration:none;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 8px;font-weight:700;font-size:16px}
   .pick a span{display:block;font-size:26px;margin-bottom:2px}
@@ -75,10 +81,18 @@
 </header>
 
 <div class="entries">
-  <a class="slash" href="https://winz-tech.github.io/portal/index.html" target="_blank" rel="noopener">
-    <span><span class="t1">作業中心</span><span class="t2">OPERATIONS HUB</span></span><span class="go">›</span></a>
-  <a class="slash dark" href="https://winz-tech.github.io/WINZ-ClockIn/index.html" target="_blank" rel="noopener">
-    <span><span class="t1">打卡系統</span><span class="t2">TIME ATTENDANCE</span></span><span class="go">›</span></a>
+  <a class="entry" href="https://winz-tech.github.io/portal/index.html" target="_blank" rel="noopener">
+    <img class="eico" src="img/icon-portal.png" alt="">
+    <span class="t1">作業中心</span>
+    <span class="t2">OPERATIONS HUB</span>
+    <span class="enter">進入系統 →</span>
+  </a>
+  <a class="entry" href="https://winz-tech.github.io/WINZ-ClockIn/index.html" target="_blank" rel="noopener">
+    <img class="eico" src="img/icon-clock.png" alt="">
+    <span class="t1">打卡系統</span>
+    <span class="t2">TIME ATTENDANCE</span>
+    <span class="enter">進入系統 →</span>
+  </a>
 </div>
 <p class="lede" style="font-size:13.5px;margin-top:10px">↑ 點按鈕會直接開啟系統網頁，接著照下面步驟安裝。</p>
 
